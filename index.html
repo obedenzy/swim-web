@@ -1,14 +1,515 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swimming School</title>
+    <!-- Use Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+        }
+        /* Custom styles for gradients and colors */
+        .bg-hero-gradient {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://placehold.co/1920x1080/0173bc/ffffff?text=Swimming+Class');
+            background-size: cover;
+            background-position: center;
+        }
+        .bg-dark-blue {
+            background-color: #0b1f3c;
+        }
+        .bg-card-blue {
+            background-color: #122a4c;
+        }
+    </style>
 </head>
-<body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+<body class="bg-gray-50">
+    <!-- Header Section -->
+    <header class="absolute top-0 left-0 w-full z-10 p-4 lg:p-6">
+        <div class="container mx-auto flex justify-between items-center text-white">
+            <a href="#" class="font-bold text-2xl">
+                <span class="text-white">Aquatic</span> <span class="text-blue-400">Academy</span>
+            </a>
+            <nav class="hidden md:flex space-x-6 lg:space-x-10">
+                <a href="#hero" class="hover:text-blue-400 transition">Home</a>
+                <a href="#about" class="hover:text-blue-400 transition">About</a>
+                <a href="#courses" class="hover:text-blue-400 transition">Courses</a>
+                <a href="#pricing" class="hover:text-blue-400 transition">Pricing</a>
+                <a href="#portfolio" class="hover:text-blue-400 transition">Gallery</a>
+                <a href="#booking" class="hover:text-blue-400 transition">Book a Class</a>
+                <a href="#service-areas" class="hover:text-blue-400 transition">Service Areas</a>
+                <a href="#map" class="hover:text-blue-400 transition">Map</a>
+                <a href="#blog" class="hover:text-blue-400 transition">Blog</a>
+            </nav>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition hidden md:block">Get started</button>
+            <div class="md:hidden">
+                <button id="menu-button" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-20 bg-dark-blue text-white flex flex-col items-center justify-center space-y-8">
+        <button id="close-menu" class="absolute top-4 right-4 text-white focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <a href="#hero" class="mobile-nav-link text-3xl hover:text-blue-400 transition">Home</a>
+        <a href="#about" class="mobile-nav-link text-3xl hover:text-blue-400 transition">About</a>
+        <a href="#courses" class="mobile-nav-link text-3xl hover:text-blue-400 transition">Courses</a>
+        <a href="#pricing" class="mobile-nav-link text-3xl hover:text-blue-400 transition">Pricing</a>
+        <a href="#portfolio" class="mobile-nav-link text-3xl hover:text-blue-400 transition">Gallery</a>
+        <a href="#booking" class="mobile-nav-link text-3xl hover:text-blue-400 transition">Book a Class</a>
+        <a href="#service-areas" class="mobile-nav-link text-3xl hover:text-blue-400 transition">Service Areas</a>
+        <a href="#map" class="mobile-nav-link text-3xl hover:text-blue-400 transition">Map</a>
+        <a href="#blog" class="mobile-nav-link text-3xl hover:text-blue-400 transition">Blog</a>
+        <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition text-lg mt-8">Get started</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="bg-hero-gradient h-screen flex items-center justify-center text-center text-white relative">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 animate-fade-in-up">We Make You a Next Level Swimmer</h1>
+            <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 opacity-90 animate-fade-in">We provide professional swimming lessons for kids, teens, and adults. Learn from our certified coaches.</p>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105 animate-fade-in-up">Start learning</button>
+        </div>
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 bg-blue-900 opacity-60"></div>
+    </section>
+
+    <!-- Enjoy Your Learning Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="lg:flex lg:space-x-12 items-center">
+                <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
+                    <img src="https://placehold.co/600x400/0858a7/ffffff?text=Swimmers" alt="Swimmers enjoying a class" class="rounded-3xl shadow-lg">
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-3xl font-bold mb-4 text-gray-800">Enjoy Your Learning</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        We believe that learning to swim should be a joyful experience. Our dedicated coaches create a fun and supportive environment, helping you build confidence and master new skills at your own pace. Whether you're a complete beginner or looking to refine your strokes, we have a class for you.
+                    </p>
+                    <div class="flex space-x-4 mb-4 items-center">
+                        <img src="https://placehold.co/80x80/cccccc/000000?text=Coach" alt="Coach" class="rounded-full w-20 h-20 border-4 border-blue-200">
+                        <div>
+                            <p class="font-semibold text-lg text-gray-800">Coach Emily</p>
+                            <p class="text-gray-500">Certified Swimming Instructor</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 text-sm">"The best time to learn to swim is when you're young. But the second best time is today."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- We Make You a Next Level Swimmer Section -->
+    <section class="py-16 bg-dark-blue text-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="lg:flex items-center">
+                <div class="w-full lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
+                    <h2 class="text-3xl font-bold mb-4">We Make You a Next Level Swimmer</h2>
+                    <p class="text-gray-300 mb-8 leading-relaxed">
+                        Our program is designed to take you from a novice to an advanced swimmer. We focus on proper technique, endurance, and safety to ensure you become a confident and skilled swimmer for life.
+                    </p>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <p class="text-4xl font-bold text-blue-400">90%</p>
+                            <p class="text-gray-400 text-sm">
+                                Students who are happy with our service
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-4xl font-bold text-blue-400">85%</p>
+                            <p class="text-gray-400 text-sm">
+                                Students who can swim confidently after 3 months
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <img src="https://placehold.co/600x400/122a4c/ffffff?text=Swimming+Class" alt="Students in a swimming class" class="rounded-3xl shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Learning Courses for You Section -->
+    <section id="courses" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-12 text-gray-800">Learning Courses For You</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course 1 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
+                    <img src="https://placehold.co/400x300/e2e8f0/000000?text=Beginner+Class" alt="Beginner Swimming Class" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-gray-800">Beginner Class</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Learn the fundamentals of swimming. Perfect for those with little to no experience.
+                        </p>
+                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 transition">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <!-- Course 2 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
+                    <img src="https://placehold.co/400x300/e2e8f0/000000?text=Intermediate+Class" alt="Intermediate Swimming Class" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-gray-800">Intermediate Class</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Improve your technique and stamina. For swimmers who know the basics.
+                        </p>
+                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 transition">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <!-- Course 3 -->
+                <div class="bg-white rounded-3xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
+                    <img src="https://placehold.co/400x300/e2e8f0/000000?text=Pro+Class" alt="Professional Swimming Class" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2 text-gray-800">Professional Class</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Advanced training for competitive swimmers. Focus on speed and efficiency.
+                        </p>
+                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 transition">Learn More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-12 text-gray-800">Our Pricing Plans</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Pricing Card 1 - Basic -->
+                <div class="bg-gray-50 p-8 rounded-3xl shadow-lg border-2 border-gray-100 transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Basic</h3>
+                    <p class="text-gray-500 mb-6">For individuals starting their journey</p>
+                    <p class="text-4xl font-extrabold text-blue-600 mb-2">$50<span class="text-lg text-gray-500">/mo</span></p>
+                    <p class="text-gray-400 mb-8">billed annually</p>
+                    <ul class="text-left space-y-3 mb-8 text-gray-600">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 4 classes per month</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Certified instructor</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Small group sessions</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Progress tracking</li>
+                    </ul>
+                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Choose Basic</button>
+                </div>
+                <!-- Pricing Card 2 - Standard (Featured) -->
+                <div class="bg-dark-blue p-8 rounded-3xl shadow-xl border-2 border-blue-400 text-white transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-bold text-white mb-2">Standard</h3>
+                    <p class="text-gray-300 mb-6">For those serious about swimming</p>
+                    <p class="text-4xl font-extrabold text-blue-400 mb-2">$80<span class="text-lg text-gray-300">/mo</span></p>
+                    <p class="text-gray-400 mb-8">billed annually</p>
+                    <ul class="text-left space-y-3 mb-8 text-gray-200">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 8 classes per month</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Certified instructor</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Priority scheduling</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Progress tracking & feedback</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Access to special events</li>
+                    </ul>
+                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Choose Standard</button>
+                </div>
+                <!-- Pricing Card 3 - Premium -->
+                <div class="bg-gray-50 p-8 rounded-3xl shadow-lg border-2 border-gray-100 transform hover:scale-105 transition-transform">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2">Premium</h3>
+                    <p class="text-gray-500 mb-6">For advanced and competitive swimmers</p>
+                    <p class="text-4xl font-extrabold text-blue-600 mb-2">$120<span class="text-lg text-gray-500">/mo</span></p>
+                    <p class="text-gray-400 mb-8">billed annually</p>
+                    <ul class="text-left space-y-3 mb-8 text-gray-600">
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Unlimited classes</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Personal coach</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 1-on-1 sessions</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Video stroke analysis</li>
+                        <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Competitive preparation</li>
+                    </ul>
+                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Choose Premium</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-12 text-gray-800">Our Gallery</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Gallery Item 1 -->
+                <div class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
+                    <img src="https://placehold.co/400x400/0b1f3c/ffffff?text=Gallery+Image" alt="Gallery Image 1" class="w-full h-auto object-cover">
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
+                    <img src="https://placehold.co/400x400/0b1f3c/ffffff?text=Gallery+Image" alt="Gallery Image 2" class="w-full h-auto object-cover">
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
+                    <img src="https://placehold.co/400x400/0b1f3c/ffffff?text=Gallery+Image" alt="Gallery Image 3" class="w-full h-auto object-cover">
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
+                    <img src="https://placehold.co/400x400/0b1f3c/ffffff?text=Gallery+Image" alt="Gallery Image 4" class="w-full h-auto object-cover">
+                </div>
+                <!-- Gallery Item 5 -->
+                <div class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
+                    <img src="https://placehold.co/400x400/0b1f3c/ffffff?text=Gallery+Image" alt="Gallery Image 5" class="w-full h-auto object-cover">
+                </div>
+                <!-- Gallery Item 6 -->
+                <div class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
+                    <img src="https://placehold.co/400x400/0b1f3c/ffffff?text=Gallery+Image" alt="Gallery Image 6" class="w-full h-auto object-cover">
+                </div>
+                <!-- Gallery Item 7 -->
+                <div class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
+                    <img src="https://placehold.co/400x400/0b1f3c/ffffff?text=Gallery+Image" alt="Gallery Image 7" class="w-full h-auto object-cover">
+                </div>
+                <!-- Gallery Item 8 -->
+                <div class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
+                    <img src="https://placehold.co/400x400/0b1f3c/ffffff?text=Gallery+Image" alt="Gallery Image 8" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-12 text-gray-800">Testimonies from Our Students</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="relative bg-white p-6 rounded-3xl shadow-lg border-2 border-transparent hover:border-blue-400 transition">
+                    <div class="flex items-start">
+                        <img src="https://placehold.co/80x80/c2c2c2/000000?text=Avatar" alt="Student 1" class="rounded-full w-12 h-12 mr-4">
+                        <p class="text-gray-700 text-left italic">
+                            "I was so afraid of water, but the coaches at Aquatic Academy were so patient and kind. I can now swim with confidence and have even started to learn the freestyle stroke. It's truly a game-changer!"
+                        </p>
+                    </div>
+                    <p class="font-semibold mt-4 text-right text-gray-800">- Jane Doe</p>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="relative bg-white p-6 rounded-3xl shadow-lg border-2 border-transparent hover:border-blue-400 transition">
+                    <div class="flex items-start">
+                        <img src="https://placehold.co/80x80/c2c2c2/000000?text=Avatar" alt="Student 2" class="rounded-full w-12 h-12 mr-4">
+                        <p class="text-gray-700 text-left italic">
+                            "The small class sizes are great, and the instructors give you personalized attention. I've improved my technique so much in just a few months. Highly recommended!"
+                        </p>
+                    </div>
+                    <p class="font-semibold mt-4 text-right text-gray-800">- John Smith</p>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="relative bg-white p-6 rounded-3xl shadow-lg border-2 border-transparent hover:border-blue-400 transition">
+                    <div class="flex items-start">
+                        <img src="https://placehold.co/80x80/c2c2c2/000000?text=Avatar" alt="Student 3" class="rounded-full w-12 h-12 mr-4">
+                        <p class="text-gray-700 text-left italic">
+                            "My kids love their swimming lessons here! They look forward to every class. The coaches make it fun and engaging while teaching them important skills. We couldn't be happier."
+                        </p>
+                    </div>
+                    <p class="font-semibold mt-4 text-right text-gray-800">- Sarah Lee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Calendly Booking Section -->
+    <section id="booking" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800">Book Your Free Trial Class</h2>
+            <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Ready to dive in? Schedule a free trial class with our certified coaches. Choose a time that works for you directly from our calendar below.
+            </p>
+            <!-- Calendly inline widget code - REPLACE WITH YOUR OWN LINK -->
+            <div class="calendly-inline-widget mx-auto rounded-3xl overflow-hidden shadow-lg border-2 border-gray-200" style="min-width:320px;height:630px;">
+                <iframe src="https://calendly.com/your-calendly-link/30min-trial-class" frameborder="0" class="w-full h-full"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section id="service-areas" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">Our Service Areas</h2>
+            <p class="text-gray-600 mb-12 max-w-2xl mx-auto">
+                We are proud to serve the following communities with our professional swimming programs.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+                <!-- Service Area 1 -->
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-md flex items-center space-x-4">
+                    <svg class="w-8 h-8 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8.707 13.293a1 1 0 01-1.414-1.414L8.586 10l-1.293-1.293a1 1 0 111.414-1.414L10 8.586l1.293-1.293a1 1 0 111.414 1.414L11.414 10l1.293 1.293a1 1 0 01-1.414 1.414L10 11.414l-1.293 1.293z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                    <span class="text-lg font-semibold text-gray-700">Columbus</span>
+                </div>
+                <!-- Service Area 2 -->
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-md flex items-center space-x-4">
+                    <svg class="w-8 h-8 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8.707 13.293a1 1 0 01-1.414-1.414L8.586 10l-1.293-1.293a1 1 0 111.414-1.414L10 8.586l1.293-1.293a1 1 0 111.414 1.414L11.414 10l1.293 1.293a1 1 0 01-1.414 1.414L10 11.414l-1.293 1.293z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                    <span class="text-lg font-semibold text-gray-700">Dublin</span>
+                </div>
+                <!-- Service Area 3 -->
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-md flex items-center space-x-4">
+                    <svg class="w-8 h-8 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8.707 13.293a1 1 0 01-1.414-1.414L8.586 10l-1.293-1.293a1 1 0 111.414-1.414L10 8.586l1.293-1.293a1 1 0 111.414 1.414L11.414 10l1.293 1.293a1 1 0 01-1.414 1.414L10 11.414l-1.293 1.293z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                    <span class="text-lg font-semibold text-gray-700">Westerville</span>
+                </div>
+                <!-- Service Area 4 -->
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-md flex items-center space-x-4">
+                    <svg class="w-8 h-8 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8.707 13.293a1 1 0 01-1.414-1.414L8.586 10l-1.293-1.293a1 1 0 111.414-1.414L10 8.586l1.293-1.293a1 1 0 111.414 1.414L11.414 10l1.293 1.293a1 1 0 01-1.414 1.414L10 11.414l-1.293 1.293z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                    <span class="text-lg font-semibold text-gray-700">Worthington</span>
+                </div>
+                <!-- Service Area 5 -->
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-md flex items-center space-x-4">
+                    <svg class="w-8 h-8 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8.707 13.293a1 1 0 01-1.414-1.414L8.586 10l-1.293-1.293a1 1 0 111.414-1.414L10 8.586l1.293-1.293a1 1 0 111.414 1.414L11.414 10l1.293 1.293a1 1 0 01-1.414 1.414L10 11.414l-1.293 1.293z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                    <span class="text-lg font-semibold text-gray-700">Gahanna</span>
+                </div>
+                <!-- Service Area 6 -->
+                <div class="bg-gray-50 p-6 rounded-2xl shadow-md flex items-center space-x-4">
+                    <svg class="w-8 h-8 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8.707 13.293a1 1 0 01-1.414-1.414L8.586 10l-1.293-1.293a1 1 0 111.414-1.414L10 8.586l1.293-1.293a1 1 0 111.414 1.414L11.414 10l1.293 1.293a1 1 0 01-1.414 1.414L10 11.414l-1.293 1.293z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                    <span class="text-lg font-semibold text-gray-700">Upper Arlington</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4 text-gray-800">Find Us on the Map</h2>
+            <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                Our main location is easy to find. See the map below for our address and directions.
+            </p>
+            <!-- Embedded Google Map - REPLACE WITH YOUR OWN MAP LINK -->
+            <div class="rounded-3xl overflow-hidden shadow-lg border-2 border-gray-200" style="min-height: 400px; width: 100%;">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2847141315847!2d-122.08381598468112!3d37.42206597982547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb56a8d6b8b0b%3A0x9a4a7a8d5e5b3b1a!2sGoogleplex!5e0!3m2!1sen!2sus!4v1628103131765!5m2!1sen!2sus" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips & Articles Section -->
+    <section id="blog" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">Tips & Articles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Article 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/400x250/d1d5db/000000?text=Article+Image" alt="Article 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">How to Choose the Right Goggles</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Choosing the right pair of swimming goggles can make all the difference in your comfort and performance. Here are some tips to help you find the perfect fit.
+                        </p>
+                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 transition">Read More &rarr;</a>
+                    </div>
+                </div>
+                <!-- Article 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                    <img src="https://placehold.co/400x250/d1d5db/000000?text=Article+Image" alt="Article 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">The Benefits of Swimming for Your Health</h3>
+                        <p class="text-gray-600 text-sm mb-4">
+                            Swimming is a full-body workout that offers numerous health benefits, from improved cardiovascular health to increased muscle strength.
+                        </p>
+                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 transition">Read More &rarr;</a>
+                    </div>
+                </div>
+                <!-- Article 3 - newsletter signup -->
+                <div class="bg-dark-blue rounded-2xl shadow-lg p-6 text-white">
+                    <h3 class="font-bold text-xl mb-2">Subscribe to Our Newsletter</h3>
+                    <p class="text-gray-300 text-sm mb-4">
+                        Get the latest news, tips, and articles about swimming delivered straight to your inbox.
+                    </p>
+                    <form>
+                        <input type="email" placeholder="Enter your email" class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark-blue text-white py-12">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- About -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-gray-200">About Us</h4>
+                    <p class="text-gray-400 text-sm mb-4">
+                        We are a passionate team of swimming coaches dedicated to helping you achieve your goals in the water.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.062 1.954a.65.65 0 00-.594-.539l-4.721-.734a.64.64 0 00-.73.493l-1.002 6.476L9.673 8.21a.634.634 0 00-.638.293L.266 21.045a.65.65 0 00.325.86l4.721.734a.64.64 0 00.73-.493L6.044 15.61l6.096-1.002a.634.634 0 00.638-.293l8.77-12.274a.65.65 0 00-.325-.86z"></path></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.707 9.293l-4 4a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L10 13.586l3.293-3.293a1 1 0 011.414 1.414z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-gray-200">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#hero" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
+                        <li><a href="#courses" class="text-gray-400 hover:text-white transition">Courses</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition">Pricing</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition">Gallery</a></li>
+                        <li><a href="#booking" class="text-gray-400 hover:text-white transition">Book a Class</a></li>
+                        <li><a href="#service-areas" class="text-gray-400 hover:text-white transition">Service Areas</a></li>
+                        <li><a href="#map" class="text-gray-400 hover:text-white transition">Map</a></li>
+                        <li><a href="#blog" class="text-gray-400 hover:text-white transition">Blog</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Us -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-gray-200">Contact Us</h4>
+                    <p class="text-gray-400 text-sm mb-2">123 Aqua Street, Swimmer City, USA 12345</p>
+                    <p class="text-gray-400 text-sm mb-2">Email: info@aquaticacademy.com</p>
+                    <p class="text-gray-400 text-sm">Phone: +1 234 567 890</p>
+                </div>
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="font-bold text-lg mb-4 text-gray-200">Newsletter</h4>
+                    <p class="text-gray-400 text-sm mb-4">
+                        Stay up to date with our latest news and offers.
+                    </p>
+                    <form>
+                        <input type="email" placeholder="Enter your email" class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
+                &copy; 2024 Aquatic Academy. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        document.getElementById('menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('hidden');
+        });
+
+        document.getElementById('close-menu').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+
+        // Get all mobile navigation links
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        // Add a click event listener to each link
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                // Hide the mobile menu when a link is clicked
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
