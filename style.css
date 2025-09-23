@@ -1,1 +1,24 @@
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8fafc;
+}
+/* Custom styles for gradients and colors */
+.bg-hero-gradient {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://placehold.co/1920x1080/0173bc/ffffff?text=Swimming+Class');
+    background-size: cover;
+    background-position: center;
+}
+.bg-dark-blue {
+    background-color: #0b1f3c;
+}
+.bg-card-blue {
+    background-color: #122a4c;
+}
+
 /* Add styles here */
+#hero {
+    height: 50vh;
+}
+
