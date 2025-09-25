@@ -1,602 +1,693 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head itemscope itemtype="https://schema.org/WebSite">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aquatic Academy - Professional Swimming Lessons</title>
-    <!-- Use Tailwind CSS for styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Use Inter font -->
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8fafc;
-        }
-        /* Custom styles for gradients and colors */
-        .bg-hero-gradient {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://placehold.co/1920x1080/0173bc/ffffff?text=Swimming+Class');
-            background-size: cover;
-            background-position: center;
-        }
-        .bg-dark-blue {
-            background-color: #0b1f3c;
-        }
-        .bg-card-blue {
-            background-color: #122a4c;
-        }
-
-        #hero {
-            height: 50vh;
-        }
-    </style>
-    <!-- AI Search Optimization: JSON-LD Structured Data -->
+    <title itemprop="name">Treorier Interior Design</title>
+    <meta name="description" itemprop="description" content="Treorier Interior Design provides professional and stylish interior design, home decorating, and space planning services in the Columbus, Ohio metro area. Schedule a free consultation to transform your space.">
+    
+    <!-- Structured Data for WebSite -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Aquatic Academy",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Aqua Street",
-        "addressLocality": "Swimmer City",
-        "addressRegion": "CA",
-        "postalCode": "12345",
-        "addressCountry": "US"
-      },
-      "url": "http://www.aquaticacademy.com",
-      "telephone": "+1-234-567-890",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
-          "opens": "09:00",
-          "closes": "18:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "10:00",
-          "closes": "14:00"
-        }
-      ],
-      "image": "https://placehold.co/1920x1080/0173bc/ffffff?text=Swimming+Class",
-      "description": "Aquatic Academy offers professional swimming lessons for all ages, from beginners to advanced swimmers. Our certified instructors focus on safety, proper technique, and building confidence in the water.",
-      "serviceArea": {
-        "@type": "State",
-        "name": "California"
-      },
-      "hasCourse": [
-        {
-          "@type": "Course",
-          "name": "Beginner Class",
-          "description": "Learn the fundamentals of swimming. Perfect for those with little to no experience.",
-          "provider": {
-            "@type": "Organization",
-            "name": "Aquatic Academy"
-          }
-        },
-        {
-          "@type": "Course",
-          "name": "Intermediate Class",
-          "description": "Improve your technique and stamina. For swimmers who know the basics.",
-          "provider": {
-            "@type": "Organization",
-            "name": "Aquatic Academy"
-          }
-        },
-        {
-          "@type": "Course",
-          "name": "Professional Class",
-          "description": "Advanced training for competitive swimmers. Focus on speed and efficiency.",
-          "provider": {
-            "@type": "Organization",
-            "name": "Aquatic Academy"
-          }
-        }
-      ]
+      "@type": "WebSite",
+      "name": "Treorier Interior Design",
+      "url": "https://www.treorierdesign.com/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.treorierdesign.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
     }
     </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .bg-very-dark {
+            background-color: #0b0b0b;
+        }
+        .text-light-gold {
+            color: #d4a778;
+        }
+        .bg-light-gold {
+            background-color: #d4a778;
+        }
+        .border-light-gold {
+            border-color: #d4a778;
+        }
+        .btn-gold {
+            background-color: #d4a778;
+            color: #0b0b0b;
+            font-weight: 600;
+        }
+        .btn-gold:hover {
+            background-color: #c0966a;
+        }
+        .circular-progress {
+            position: relative;
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            background-color: #d4a778;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0b0b0b;
+            font-weight: 700;
+        }
+        .circular-progress::before {
+            content: "";
+            position: absolute;
+            height: 85px;
+            width: 85px;
+            background-color: #0b0b0b;
+            border-radius: 50%;
+        }
+        .circular-progress .value {
+            position: relative;
+            font-size: 1.5rem;
+            z-index: 10;
+        }
+        .circular-progress svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            transform: rotate(-90deg);
+        }
+        .circular-progress svg circle {
+            fill: none;
+            stroke-width: 8px;
+            stroke-linecap: round;
+            transform: translate(5px, 5px);
+            transition: stroke-dashoffset 0.5s linear;
+        }
+        .progress-bar {
+            stroke: #d4a778;
+        }
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+        }
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        .message-box {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #d4a778;
+            color: #0b0b0b;
+            padding: 20px;
+            border-radius: 8px;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1023px) {
+            .hero-content {
+                padding-top: 6rem;
+                padding-bottom: 6rem;
+            }
+        }
+    </style>
 </head>
-<body class="bg-gray-50">
-    <header class="absolute top-0 left-0 w-full z-10 p-4 lg:p-6">
-        <div class="container mx-auto flex justify-between items-center text-white">
-            <a href="#" class="font-bold text-2xl">
-                <span class="text-white">Aquatic</span> <span class="text-blue-400">Academy</span>
-            </a>
-            <nav class="hidden md:flex space-x-6 lg:space-x-10">
-                <a href="#hero" class="hover:text-blue-400 transition">Home</a>
-                <a href="#about" class="hover:text-blue-400 transition">About</a>
-                <a href="#courses" class="hover:text-blue-400 transition">Courses</a>
-                <a href="#pricing" class="hover:text-blue-400 transition">Pricing</a>
-                <a href="#portfolio" class="hover:text-blue-400 transition">Gallery</a>
-                <a href="#booking" class="hover:text-blue-400 transition">Book a Class</a>
-                <a href="#service-areas" class="hover:text-blue-400 transition">Service Areas</a>
-                <a href="#map" class="hover:text-blue-400 transition">Map</a>
-                <a href="#blog" class="hover:text-blue-400 transition">Blog</a>
-            </nav>
-            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full transition hidden md:block">Get started</button>
-            <div class="md:hidden">
-                <button id="menu-button" class="text-white focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
+<body itemscope itemtype="https://schema.org/LocalBusiness">
+
+    <!-- Header Section (Dark) -->
+    <header class="bg-very-dark text-white py-4 px-6 md:px-12 lg:px-24">
+        <div class="flex justify-between items-center max-w-7xl mx-auto">
+            <!-- Logo -->
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-light-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(30deg);"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                <span class="text-2xl font-bold tracking-tight" itemprop="name">treorier</span>
             </div>
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex space-x-8 text-sm font-semibold tracking-wide uppercase">
+                <a href="#home" class="hover:text-light-gold transition-colors duration-300">HOME</a>
+                <a href="#about" class="hover:text-light-gold transition-colors duration-300">ABOUT US</a>
+                <a href="#services" class="hover:text-light-gold transition-colors duration-300">SERVICES</a>
+                <a href="#blog" class="hover:text-light-gold transition-colors duration-300">BLOG</a>
+                <a href="#newsletter" class="hover:text-light-gold transition-colors duration-300">NEWSLETTER</a>
+                <a href="#contact" class="hover:text-light-gold transition-colors duration-300">CONTACT US</a>
+            </nav>
+            <!-- Icons -->
+            <div class="hidden lg:flex items-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-light-gold transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-light-gold transition-colors duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
+                </a>
+            </div>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden text-light-gold focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden lg:hidden mt-4 text-center space-y-2">
+            <a href="#home" class="block py-2 hover:text-light-gold">HOME</a>
+            <a href="#about" class="block py-2 hover:text-light-gold">ABOUT US</a>
+            <a href="#services" class="block py-2 hover:text-light-gold">SERVICES</a>
+            <a href="#blog" class="block py-2 hover:text-light-gold">BLOG</a>
+            <a href="#newsletter" class="block py-2 hover:text-light-gold">NEWSLETTER</a>
+            <a href="#contact" class="block py-2 hover:text-light-gold">CONTACT US</a>
         </div>
     </header>
 
-    <main>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-20 bg-dark-blue text-white flex flex-col items-center justify-center space-y-8">
-            <button id="close-menu" class="absolute top-4 right-4 text-white focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-            <a href="#hero" class="mobile-nav-link text-3xl hover:text-blue-400 transition">Home</a>
-            <a href="#about" class="mobile-nav-link text-3xl hover:text-blue-400 transition">About</a>
-            <a href="#courses" class="mobile-nav-link text-3xl hover:text-blue-400 transition">Courses</a>
-            <a href="#pricing" class="mobile-nav-link text-3xl hover:text-blue-400 transition">Pricing</a>
-            <a href="#portfolio" class="mobile-nav-link text-3xl hover:text-blue-400 transition">Gallery</a>
-            <a href="#booking" class="mobile-nav-link text-3xl hover:text-blue-400 transition">Book a Class</a>
-            <a href="#service-areas" class="mobile-nav-link text-3xl hover:text-blue-400 transition">Service Areas</a>
-            <a href="#map" class="mobile-nav-link text-3xl hover:text-blue-400 transition">Map</a>
-            <a href="#blog" class="mobile-nav-link text-3xl hover:text-blue-400 transition">Blog</a>
-            <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition text-lg mt-8">Get started</button>
+    <!-- Hero Section (Dark) -->
+    <section id="home" class="bg-very-dark text-white relative h-[600px] md:h-[800px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/1a1a1a/cccccc?text=Professional+Interior+Design');">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
         </div>
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-7xl font-bold tracking-tight leading-none mb-4 md:mb-6">Designing Dreams, Crafting Spaces</h1>
+            <p class="text-lg md:text-xl font-light text-gray-300 max-w-2xl mx-auto">We are very enthusiastic and passionate about creating spaces that reflect your personality and style, blending aesthetics with functionality to deliver exceptional living environments.</p>
+            <a href="#" class="mt-8 md:mt-12 inline-block btn-gold py-3 px-8 rounded-full font-semibold transition duration-300 transform hover:scale-105">EXPLORE PROJECTS</a>
+        </div>
+    </section>
 
-        <!-- Hero Section -->
-        <section id="hero" class="bg-hero-gradient h-screen flex items-center justify-center text-center text-white relative">
-            <div class="container mx-auto px-4">
-                <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold mb-4 animate-fade-in-up">We Make You a Next Level Swimmer</h1>
-                <p class="text-lg md:text-xl max-w-2xl mx-auto mb-8 opacity-90 animate-fade-in">We provide professional swimming lessons for kids, teens, and adults. Learn from our certified coaches.</p>
-                <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105 animate-fade-in-up">Start learning</button>
+    <!-- Welcome Section (Light) -->
+    <section id="about" class="bg-white py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 items-center">
+            <!-- Box 1 -->
+            <div class="p-8 border rounded-lg shadow-md border-gray-200 text-center lg:text-left">
+                <div class="flex flex-col lg:flex-row items-center justify-center lg:justify-start space-x-0 lg:space-x-4 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-light-gold mb-2 lg:mb-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                    <h3 class="text-2xl font-bold">Building Dream Homes</h3>
+                </div>
+                <p class="text-gray-600">From concept to completion, we manage every detail to transform your house into the home you've always envisioned, focusing on bespoke design and seamless execution.</p>
             </div>
-            <!-- Gradient overlay -->
-            <div class="absolute inset-0 bg-blue-900 opacity-60"></div>
-        </section>
+            <!-- Central Image -->
+            <div class="relative order-first lg:order-none">
+                <img src="https://placehold.co/800x600/333333/ffffff?text=Modern+Office+Space" alt="A sleek, modern office space designed for productivity and collaboration with clean lines and minimalist furniture." class="rounded-lg shadow-xl w-full h-auto object-cover">
+            </div>
+            <!-- Box 2 -->
+            <div class="p-8 border rounded-lg shadow-md border-gray-200 text-center lg:text-left">
+                <div class="flex flex-col lg:flex-row items-center justify-center lg:justify-start space-x-0 lg:space-x-4 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-light-gold mb-2 lg:mb-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M17 14h.01"></path></svg>
+                    <h3 class="text-2xl font-bold">Professional Designs</h3>
+                </div>
+                <p class="text-gray-600">Our team of experienced designers provides professional, tailored design solutions for residential and commercial spaces, focusing on creativity, detail, and client satisfaction.</p>
+            </div>
+        </div>
+    </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-16 bg-white">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="lg:flex lg:space-x-12 items-center">
-                    <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
-                        <img src="https://placehold.co/600x400/0858a7/ffffff?text=Swimmers" alt="A group of swimmers enjoying a class" class="rounded-3xl shadow-lg">
-                    </div>
-                    <div class="w-full lg:w-1/2">
-                        <h2 class="text-3xl font-bold mb-4 text-gray-800">Enjoy Your Learning</h2>
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-                            We believe that learning to swim should be a joyful experience. Our dedicated coaches create a fun and supportive environment, helping you build confidence and master new skills at your own pace. Whether you're a complete beginner or looking to refine your strokes, we have a class for you.
-                        </p>
-                        <div class="flex space-x-4 mb-4 items-center">
-                            <img src="https://placehold.co/80x80/cccccc/000000?text=Coach" alt="A smiling female swimming coach" class="rounded-full w-20 h-20 border-4 border-blue-200">
-                            <div>
-                                <p class="font-semibold text-lg text-gray-800">Coach Emily</p>
-                                <p class="text-gray-500">Certified Swimming Instructor</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-500 text-sm">"The best time to learn to swim is when you're young. But the second best time is today."</p>
-                    </div>
+    <!-- About Us Section (Black) -->
+    <section class="bg-very-dark text-white py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+            <div class="relative">
+                <img src="https://placehold.co/600x600/555555/ffffff?text=Interior+Office+Photo" alt="A bright, modern interior office with stylish furniture and warm lighting, highlighting a professional and inviting atmosphere." class="rounded-lg shadow-xl w-full h-auto object-cover">
+                <div class="absolute -bottom-10 left-10 bg-light-gold text-very-dark p-6 rounded-lg shadow-lg text-center font-bold text-lg md:text-xl transform -rotate-3">
+                    <p class="text-4xl md:text-5xl font-extrabold mb-1">25+</p>
+                    <p class="text-sm md:text-base">Years of Experience</p>
                 </div>
             </div>
-        </section>
+            <div class="mt-16 lg:mt-0">
+                <h2 class="text-light-gold text-sm font-semibold tracking-wide uppercase mb-2">About Us</h2>
+                <h3 class="text-3xl md:text-4xl font-bold leading-tight mb-6">The Best Solutions By Professional Designers</h3>
+                <p class="text-gray-400 mb-6 leading-relaxed">At Treorier, we believe that every space has a story to tell. Our mission is to listen to your story and translate it into a beautiful, functional, and personalized interior. With over 25 years of experience, we have mastered the art of creating environments that inspire and delight.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="flex items-start space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-light-gold mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                        <p class="text-gray-400">Tailored solutions for every client's unique style.</p>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-light-gold mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                        <p class="text-gray-400">Expertise in both residential and commercial projects.</p>
+                    </div>
+                </div>
+                <a href="#" class="btn-gold py-3 px-8 rounded-full font-semibold transition duration-300 transform hover:scale-105 inline-block">DISCOVER MORE</a>
+            </div>
+        </div>
+    </section>
 
-        <!-- Stats Section -->
-        <section class="py-16 bg-dark-blue text-white">
-            <div class="container mx-auto px-4 lg:px-8">
-                <div class="lg:flex items-center">
-                    <div class="w-full lg:w-1/2 mb-8 lg:mb-0 lg:pr-12">
-                        <h2 class="text-3xl font-bold mb-4">We Make You a Next Level Swimmer</h2>
-                        <p class="text-gray-300 mb-8 leading-relaxed">
-                            Our program is designed to take you from a novice to an advanced swimmer. We focus on proper technique, endurance, and safety to ensure you become a confident and skilled swimmer for life.
-                        </p>
-                        <div class="grid grid-cols-2 gap-8">
-                            <div>
-                                <p class="text-4xl font-bold text-blue-400">90%</p>
-                                <p class="text-gray-400 text-sm">
-                                    Students who are happy with our service
-                                </p>
-                            </div>
-                            <div>
-                                <p class="text-4xl font-bold text-blue-400">85%</p>
-                                <p class="text-gray-400 text-sm">
-                                    Students who can swim confidently after 3 months
-                                </p>
-                            </div>
-                        </div>
+    <!-- Services Section (Black) -->
+    <section id="services" class="bg-very-dark text-white py-16 md:py-24 px-6 md:px-12 lg:px-24" itemscope itemtype="https://schema.org/Service">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center text-light-gold text-sm font-semibold tracking-wide uppercase mb-2">Our Services</h2>
+            <h3 class="text-center text-3xl md:text-4xl font-bold mb-12" itemprop="name">Services We're Providing</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-gray-800 p-8 rounded-lg text-center" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/Service">
+                    <div class="text-light-gold mb-4 mx-auto w-16 h-16 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2S9 11.105 9 10s1.343-2 3-2z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 14c-1.657 0-3-.895-3-2s1.343-2 3-2m-3 2h6m-3-6v12M3 11v-1a2 2 0 012-2h14a2 2 0 012 2v1m-4 5v-1a2 2 0 00-2-2H9a2 2 0 00-2 2v1" /></svg>
                     </div>
-                    <div class="w-full lg:w-1/2">
-                        <img src="/assests/IMG_2996.MOV" alt="Students practicing swimming strokes in a pool" class="rounded-3xl shadow-lg">
+                    <h4 class="text-2xl font-bold mb-2" itemprop="name">Interior Design</h4>
+                    <p class="text-gray-400 text-sm" itemprop="description">Crafting unique, functional, and aesthetically pleasing spaces that reflect your personality and lifestyle.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-gray-800 p-8 rounded-lg text-center" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/Service">
+                    <div class="text-light-gold mb-4 mx-auto w-16 h-16 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h.01M17 11h.01M9 15h.01M15 15h.01M4 19h16a2 2 0 002-2V7a2 2 0 00-2-2H4a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                     </div>
+                    <h4 class="text-2xl font-bold mb-2" itemprop="name">Home Decorating</h4>
+                    <p class="text-gray-400 text-sm" itemprop="description">Providing expert guidance on furniture, lighting, art, and accessories to bring a new life to your existing space.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-gray-800 p-8 rounded-lg text-center" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/Service">
+                    <div class="text-light-gold mb-4 mx-auto w-16 h-16 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.484 9.243 5 7.5 5S4.168 5.484 3 6.253m9 0c1.168-.769 2.757-1.253 4.5-1.253 1.743 0 3.332.484 4.5 1.253M12 6.253v13C10.832 18.516 9.243 19 7.5 19s-4.168-.484-4.5-1.253m9 0c1.168.769 2.757 1.253 4.5 1.253 1.743 0 3.332-.484 4.5-1.253m-18 0a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v.75a.75.75 0 01-.75.75H3.75a.75.75 0 01-.75-.75v-.75zm18 0a.75.75 0 01-.75-.75h-.75a.75.75 0 01-.75.75v.75a.75.75 0 01.75.75h.75a.75.75 0 01.75-.75v-.75zm-6-2.5a.75.75 0 01-.75-.75v-.75a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v.75a.75.75 0 01-.75.75h-.75zm-6 0a.75.75 0 01-.75-.75v-.75a.75.75 0 01.75-.75h.75a.75.75 0 01.75.75v.75a.75.75 0 01-.75.75h-.75z" /></svg>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-2" itemprop="name">Commercial Design</h4>
+                    <p class="text-gray-400 text-sm" itemprop="description">Specializing in creating productive and engaging commercial spaces, from corporate offices to retail environments.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="bg-gray-800 p-8 rounded-lg text-center" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/Service">
+                    <div class="text-light-gold mb-4 mx-auto w-16 h-16 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 21.5c-4.694 0-8.5-3.806-8.5-8.5S7.306 4.5 12 4.5s8.5 3.806 8.5 8.5-3.806 8.5-8.5 8.5z" /><path d="M12 21.5c-4.694 0-8.5-3.806-8.5-8.5S7.306 4.5 12 4.5s8.5 3.806 8.5 8.5-3.806 8.5-8.5 8.5zM12 10v4m-2-2h4" /></svg>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-2" itemprop="name">Space Planning</h4>
+                    <p class="text-gray-400 text-sm" itemprop="description">Optimizing the layout and flow of your space to maximize functionality, comfort, and style.</p>
                 </div>
             </div>
-        </section>
-        
-        <!-- Courses Section -->
-        <section id="courses" class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold mb-12 text-gray-800">Learning Courses For You</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article class="bg-white rounded-3xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
-                        <img src="/assests/image2.jpeg" alt="A swimming pool with lane markers" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="font-bold text-xl mb-2 text-gray-800">Beginner Class</h3>
-                            <p class="text-gray-600 text-sm mb-4">
-                                Learn the fundamentals of swimming. Perfect for those with little to no experience.
-                            </p>
-                            <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 transition">Learn More &rarr;</a>
-                        </div>
-                    </article>
-                    <article class="bg-white rounded-3xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
-                        <img src="/assests/image2.jpeg" alt="A swimmer doing a flip turn" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="font-bold text-xl mb-2 text-gray-800">Intermediate Class</h3>
-                            <p class="text-gray-600 text-sm mb-4">
-                                Improve your technique and stamina. For swimmers who know the basics.
-                            </p>
-                            <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 transition">Learn More &rarr;</a>
-                        </div>
-                    </article>
-                    <article class="bg-white rounded-3xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
-                        <img src="/assests/image2.jpeg" alt="A professional swimmer mid-race" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="font-bold text-xl mb-2 text-gray-800">Professional Class</h3>
-                            <p class="text-gray-600 text-sm mb-4">
-                                Advanced training for competitive swimmers. Focus on speed and efficiency.
-                            </p>
-                            <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 transition">Learn More &rarr;</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Pricing Section -->
-        <section id="pricing" class="py-16 bg-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold mb-12 text-gray-800">Our Pricing Plans</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Pricing Card 1 - Basic -->
-                    <div class="bg-gray-50 p-8 rounded-3xl shadow-lg border-2 border-gray-100 transform hover:scale-105 transition-transform">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Basic</h3>
-                        <p class="text-gray-500 mb-6">For individuals starting their journey</p>
-                        <p class="text-4xl font-extrabold text-blue-600 mb-2">$50<span class="text-lg text-gray-500">/mo</span></p>
-                        <p class="text-gray-400 mb-8">billed annually</p>
-                        <ul class="text-left space-y-3 mb-8 text-gray-600">
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 4 classes per month</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Certified instructor</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Small group sessions</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Progress tracking</li>
-                        </ul>
-                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Choose Basic</button>
+    <!-- Innovative Ideas Section (Light) -->
+    <section class="bg-white py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+            <div>
+                <h2 class="text-sm font-semibold tracking-wide uppercase mb-2">Our Work</h2>
+                <h3 class="text-3xl md:text-4xl font-bold leading-tight mb-6">Interior Designs From The Future Living</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="flex items-start space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-light-gold mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                        <p class="text-gray-600">We create timeless designs that anticipate future trends.</p>
                     </div>
-                    <!-- Pricing Card 2 - Standard (Featured) -->
-                    <div class="bg-dark-blue p-8 rounded-3xl shadow-xl border-2 border-blue-400 text-white transform hover:scale-105 transition-transform">
-                        <h3 class="text-2xl font-bold text-white mb-2">Standard</h3>
-                        <p class="text-gray-300 mb-6">For those serious about swimming</p>
-                        <p class="text-4xl font-extrabold text-blue-400 mb-2">$80<span class="text-lg text-gray-300">/mo</span></p>
-                        <p class="text-gray-400 mb-8">billed annually</p>
-                        <ul class="text-left space-y-3 mb-8 text-gray-200">
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 8 classes per month</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Certified instructor</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Priority scheduling</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Progress tracking & feedback</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Access to special events</li>
-                        </ul>
-                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Choose Standard</button>
+                    <div class="flex items-start space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-light-gold mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                        <p class="text-gray-600">Our designs incorporate sustainable and innovative materials.</p>
                     </div>
-                    <!-- Pricing Card 3 - Premium -->
-                    <div class="bg-gray-50 p-8 rounded-3xl shadow-lg border-2 border-gray-100 transform hover:scale-105 transition-transform">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Premium</h3>
-                        <p class="text-gray-500 mb-6">For advanced and competitive swimmers</p>
-                        <p class="text-4xl font-extrabold text-blue-600 mb-2">$120<span class="text-lg text-gray-500">/mo</span></p>
-                        <p class="text-gray-400 mb-8">billed annually</p>
-                        <ul class="text-left space-y-3 mb-8 text-gray-600">
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Unlimited classes</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Personal coach</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> 1-on-1 sessions</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Video stroke analysis</li>
-                            <li class="flex items-center"><svg class="w-5 h-5 mr-2 text-blue-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg> Competitive preparation</li>
-                        </ul>
-                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Choose Premium</button>
+                    <div class="flex items-start space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-light-gold mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                        <p class="text-gray-600">Smart home technology is seamlessly integrated into our plans.</p>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-light-gold mt-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+                        <p class="text-gray-600">We prioritize designs that enhance well-being and productivity.</p>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold mb-12 text-gray-800">Our Gallery</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                    <figure class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
-                        <img src="/assests/image2.jpeg" alt="An overhead view of a swimmer in a pool" class="w-full h-auto object-cover">
-                    </figure>
-                    <figure class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
-                        <img src="/assests/image2.jpeg" alt="A child learning to float on their back" class="w-full h-auto object-cover">
-                    </figure>
-                    <figure class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
-                        <img src="/assests/image2.jpeg" alt="A swimming coach giving instructions to a group of students" class="w-full h-auto object-cover">
-                    </figure>
-                    <figure class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
-                        <img src="/assests/image2.jpeg" alt="A swimmer doing the butterfly stroke" class="w-full h-auto object-cover">
-                    </figure>
-                    <!-- <figure class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
-                        <img src="https://placehold.co/400x400/0b1f3c/ffffff?text=Gallery+Image" alt="A young swimmer smiling after a lesson" class="w-full h-auto object-cover">
-                    </figure>
-                    <figure class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
-                        <img src="https://placehold.co/400x400/0b1f3c/ffffff?text=Gallery+Image" alt="Swimming lanes at an indoor pool" class="w-full h-auto object-cover">
-                    </figure>
-                    <figure class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
-                        <img src="https://placehold.co/400x400/0b1f3c/ffffff?text=Gallery+Image" alt="A pair of swimming goggles and a swim cap" class="w-full h-auto object-cover">
-                    </figure>
-                    <figure class="rounded-2xl overflow-hidden shadow-lg transform hover:scale-105 transition-transform">
-                        <img src="https://placehold.co/400x400/0b1f3c/ffffff?text=Gallery+Image" alt="An underwater shot of a swimmer" class="w-full h-auto object-cover">
-                    </figure> -->
-                </div>
+            <div class="relative">
+                <img src="https://placehold.co/600x600/666666/ffffff?text=Stylish+Living+Room" alt="A stylish, minimalist living room with a neutral color palette, natural light, and modern furniture." class="rounded-lg shadow-xl w-full h-auto object-cover">
             </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-16 bg-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold mb-12 text-gray-800">Testimonies from Our Students</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article class="relative bg-white p-6 rounded-3xl shadow-lg border-2 border-transparent hover:border-blue-400 transition">
-                        <div class="flex items-start">
-                            <img src="https://placehold.co/80x80/c2c2c2/000000?text=Avatar" alt="Avatar of a student" class="rounded-full w-12 h-12 mr-4">
-                            <p class="text-gray-700 text-left italic">
-                                "I was so afraid of water, but the coaches at Aquatic Academy were so patient and kind. I can now swim with confidence and have even started to learn the freestyle stroke. It's truly a game-changer!"
-                            </p>
+        </div>
+    </section>
+    
+    <!-- Design Stats Section (Black) -->
+    <section class="bg-very-dark text-white py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+            <div class="relative order-first lg:order-none">
+                <img src="https://placehold.co/600x600/555555/ffffff?text=Modern+Kitchen" alt="A sleek, modern kitchen with dark cabinetry, brass hardware, and a large central island, designed for both cooking and entertaining." class="rounded-lg shadow-xl w-full h-auto object-cover">
+            </div>
+            <div class="mt-16 lg:mt-0">
+                <h2 class="text-sm font-semibold tracking-wide uppercase mb-2">OUR STYLISH DESIGNS</h2>
+                <h3 class="text-3xl md:text-4xl font-bold leading-tight mb-6">Our Innovative Ideas, The Most Stylish Designs</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 text-center">
+                    <!-- Progress Circle 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="circular-progress">
+                            <span class="value">75%</span>
+                            <svg class="progress-75" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" stroke="#444" stroke-dasharray="282.6" stroke-dashoffset="0"></circle>
+                                <circle cx="50" cy="50" r="45" class="progress-bar" stroke-dasharray="282.6" stroke-dashoffset="70.65"></circle>
+                            </svg>
                         </div>
-                        <p class="font-semibold mt-4 text-right text-gray-800">- Jane Doe</p>
-                    </article>
-                    <article class="relative bg-white p-6 rounded-3xl shadow-lg border-2 border-transparent hover:border-blue-400 transition">
-                        <div class="flex items-start">
-                            <img src="https://placehold.co/80x80/c2c2c2/000000?text=Avatar" alt="Avatar of a student" class="rounded-full w-12 h-12 mr-4">
-                            <p class="text-gray-700 text-left italic">
-                                "The small class sizes are great, and the instructors give you personalized attention. I've improved my technique so much in just a few months. Highly recommended!"
-                            </p>
+                        <p class="text-sm mt-4">Modern Designs</p>
+                    </div>
+                    <!-- Progress Circle 2 -->
+                    <div class="flex flex-col items-center">
+                        <div class="circular-progress">
+                            <span class="value">85%</span>
+                            <svg class="progress-85" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" stroke="#444" stroke-dasharray="282.6" stroke-dashoffset="0"></circle>
+                                <circle cx="50" cy="50" r="45" class="progress-bar" stroke-dasharray="282.6" stroke-dashoffset="42.39"></circle>
+                            </svg>
                         </div>
-                        <p class="font-semibold mt-4 text-right text-gray-800">- John Smith</p>
-                    </article>
-                    <article class="relative bg-white p-6 rounded-3xl shadow-lg border-2 border-transparent hover:border-blue-400 transition">
-                        <div class="flex items-start">
-                            <img src="https://placehold.co/80x80/c2c2c2/000000?text=Avatar" alt="Avatar of a student" class="rounded-full w-12 h-12 mr-4">
-                            <p class="text-gray-700 text-left italic">
-                                "My kids love their swimming lessons here! They look forward to every class. The coaches make it fun and engaging while teaching them important skills. We couldn't be happier."
-                            </p>
+                        <p class="text-sm mt-4">3D Animations</p>
+                    </div>
+                    <!-- Progress Circle 3 -->
+                    <div class="flex flex-col items-center">
+                        <div class="circular-progress">
+                            <span class="value">90%</span>
+                            <svg class="progress-90" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" stroke="#444" stroke-dasharray="282.6" stroke-dashoffset="0"></circle>
+                                <circle cx="50" cy="50" r="45" class="progress-bar" stroke-dasharray="282.6" stroke-dashoffset="28.26"></circle>
+                            </svg>
                         </div>
-                        <p class="font-semibold mt-4 text-right text-gray-800">- Sarah Lee</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Calendly Booking Section -->
-        <section id="booking" class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold mb-4 text-gray-800">Book Your Free Trial Class</h2>
-                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
-                    Ready to dive in? Schedule a free trial class with our certified coaches. Choose a time that works for you directly from our calendar below.
-                </p>
-                <div class="calendly-inline-widget mx-auto rounded-3xl overflow-hidden shadow-lg border-2 border-gray-200" style="min-width:320px;height:630px;">
-                    <iframe src="https://calendly.com/your-calendly-link/30min-trial-class" frameborder="0" class="w-full h-full" title="Calendly Booking Widget"></iframe>
-                </div>
-            </div>
-        </section>
-
-        <!-- Service Areas Section -->
-        <section id="service-areas" class="py-16 bg-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold mb-8 text-gray-800">Our Service Areas</h2>
-                <p class="text-gray-600 mb-12 max-w-2xl mx-auto">
-                    We are proud to serve the following communities with our professional swimming programs.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
-                    <div class="bg-gray-50 p-6 rounded-2xl shadow-md flex items-center space-x-4">
-                        <svg class="w-8 h-8 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8.707 13.293a1 1 0 01-1.414-1.414L8.586 10l-1.293-1.293a1 1 0 111.414-1.414L10 8.586l1.293-1.293a1 1 0 111.414 1.414L11.414 10l1.293 1.293a1 1 0 01-1.414 1.414L10 11.414l-1.293 1.293z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
-                        <span class="text-lg font-semibold text-gray-700">Columbus</span>
+                        <p class="text-sm mt-4">Subscribers</p>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-2xl shadow-md flex items-center space-x-4">
-                        <svg class="w-8 h-8 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8.707 13.293a1 1 0 01-1.414-1.414L8.586 10l-1.293-1.293a1 1 0 111.414-1.414L10 8.586l1.293-1.293a1 1 0 111.414 1.414L11.414 10l1.293 1.293a1 1 0 01-1.414 1.414L10 11.414l-1.293 1.293z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
-                        <span class="text-lg font-semibold text-gray-700">Dublin</span>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-2xl shadow-md flex items-center space-x-4">
-                        <svg class="w-8 h-8 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8.707 13.293a1 1 0 01-1.414-1.414L8.586 10l-1.293-1.293a1 1 0 111.414-1.414L10 8.586l1.293-1.293a1 1 0 111.414 1.414L11.414 10l1.293 1.293a1 1 0 01-1.414 1.414L10 11.414l-1.293 1.293z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
-                        <span class="text-lg font-semibold text-gray-700">Westerville</span>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-2xl shadow-md flex items-center space-x-4">
-                        <svg class="w-8 h-8 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8.707 13.293a1 1 0 01-1.414-1.414L8.586 10l-1.293-1.293a1 1 0 111.414-1.414L10 8.586l1.293-1.293a1 1 0 111.414 1.414L11.414 10l1.293 1.293a1 1 0 01-1.414 1.414L10 11.414l-1.293 1.293z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
-                        <span class="text-lg font-semibold text-gray-700">Worthington</span>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-2xl shadow-md flex items-center space-x-4">
-                        <svg class="w-8 h-8 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8.707 13.293a1 1 0 01-1.414-1.414L8.586 10l-1.293-1.293a1 1 0 111.414-1.414L10 8.586l1.293-1.293a1 1 0 111.414 1.414L11.414 10l1.293 1.293a1 1 0 01-1.414 1.414L10 11.414l-1.293 1.293z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
-                        <span class="text-lg font-semibold text-gray-700">Gahanna</span>
-                    </div>
-                    <div class="bg-gray-50 p-6 rounded-2xl shadow-md flex items-center space-x-4">
-                        <svg class="w-8 h-8 text-blue-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zM8.707 13.293a1 1 0 01-1.414-1.414L8.586 10l-1.293-1.293a1 1 0 111.414-1.414L10 8.586l1.293-1.293a1 1 0 111.414 1.414L11.414 10l1.293 1.293a1 1 0 01-1.414 1.414L10 11.414l-1.293 1.293z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
-                        <span class="text-lg font-semibold text-gray-700">Upper Arlington</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Map Section -->
-        <section id="map" class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold mb-4 text-gray-800">Find Us on the Map</h2>
-                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
-                    Our main location is easy to find. See the map below for our address and directions.
-                </p>
-                <div class="rounded-3xl overflow-hidden shadow-lg border-2 border-gray-200" style="min-height: 400px; width: 100%;">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.2847141315847!2d-122.08381598468112!3d37.42206597982547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb56a8d6b8b0b%3A0x9a4a7a8d5e5b3b1a!2sGoogleplex!5e0!3m2!1sen!2sus!4v1628103131765!5m2!1sen!2sus" 
-                        width="100%" 
-                        height="400" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy"
-                        title="Google Maps location of Aquatic Academy">
-                    </iframe>
-                </div>
-            </div>
-        </section>
-        
-        <!-- FAQ Section for AI Search Optimization -->
-        <section id="faq" class="py-16 bg-white">
-            <div class="container mx-auto px-4 text-center">
-                <h2 class="text-3xl font-bold mb-12 text-gray-800">Frequently Asked Questions</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-                    <article class="bg-gray-50 p-6 rounded-2xl shadow-md">
-                        <h3 class="font-bold text-xl mb-2 text-gray-800">What age do you start lessons?</h3>
-                        <p class="text-gray-600">
-                            We offer classes for all ages, from toddlers (starting at 6 months with a parent) to adults. Our curriculum is tailored to each age group and skill level.
-                        </p>
-                    </article>
-                    <article class="bg-gray-50 p-6 rounded-2xl shadow-md">
-                        <h3 class="font-bold text-xl mb-2 text-gray-800">Are your instructors certified?</h3>
-                        <p class="text-gray-600">
-                            Yes, all of our swimming instructors are certified and have extensive experience teaching a wide range of students.
-                        </p>
-                    </article>
-                    <article class="bg-gray-50 p-6 rounded-2xl shadow-md">
-                        <h3 class="font-bold text-xl mb-2 text-gray-800">What is the cost of a class?</h3>
-                        <p class="text-gray-600">
-                            Our pricing varies based on the course and number of sessions. Please see our pricing section above for detailed information on our Basic, Standard, and Premium plans.
-                        </p>
-                    </article>
-                    <article class="bg-gray-50 p-6 rounded-2xl shadow-md">
-                        <h3 class="font-bold text-xl mb-2 text-gray-800">What should I bring to my first class?</h3>
-                        <p class="text-gray-600">
-                            For your first class, please bring a swimsuit, towel, and a pair of goggles. Swim caps are optional but recommended.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Tips & Articles Section -->
-        <section id="blog" class="py-16 bg-gray-50">
-            <div class="container mx-auto px-4 lg:px-8">
-                <h2 class="text-3xl font-bold mb-12 text-center text-gray-800">Tips & Articles</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                        <img src="https://placehold.co/400x250/d1d5db/000000?text=Article+Image" alt="A pair of swimming goggles on the edge of a pool" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="font-bold text-xl mb-2">How to Choose the Right Goggles</h3>
-                            <p class="text-gray-600 text-sm mb-4">
-                                Choosing the right pair of swimming goggles can make all the difference in your comfort and performance. Here are some tips to help you find the perfect fit.
-                            </p>
-                            <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 transition">Read More &rarr;</a>
+                    <!-- Progress Circle 4 -->
+                    <div class="flex flex-col items-center">
+                        <div class="circular-progress">
+                            <span class="value">95%</span>
+                            <svg class="progress-95" viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" stroke="#444" stroke-dasharray="282.6" stroke-dashoffset="0"></circle>
+                                <circle cx="50" cy="50" r="45" class="progress-bar" stroke-dasharray="282.6" stroke-dashoffset="14.13"></circle>
+                            </svg>
                         </div>
-                    </article>
-                    <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
-                        <img src="https://placehold.co/400x250/d1d5db/000000?text=Article+Image" alt="A person swimming laps in a pool" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="font-bold text-xl mb-2">The Benefits of Swimming for Your Health</h3>
-                            <p class="text-gray-600 text-sm mb-4">
-                                Swimming is a full-body workout that offers numerous health benefits, from improved cardiovascular health to increased muscle strength.
-                            </p>
-                            <a href="#" class="text-blue-600 font-semibold hover:text-blue-800 transition">Read More &rarr;</a>
-                        </div>
-                    </article>
-                    <div class="bg-dark-blue rounded-2xl shadow-lg p-6 text-white">
-                        <h3 class="font-bold text-xl mb-2">Subscribe to Our Newsletter</h3>
-                        <p class="text-gray-300 text-sm mb-4">
-                            Get the latest news, tips, and articles about swimming delivered straight to your inbox.
-                        </p>
-                        <form>
-                            <input type="email" placeholder="Enter your email" class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Subscribe</button>
-                        </form>
+                        <p class="text-sm mt-4">Customer</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 text-center">
+                    <div class="flex flex-col items-center space-y-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-light-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                        <p class="text-sm text-gray-400">Residential</p>
+                    </div>
+                    <div class="flex flex-col items-center space-y-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-light-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M12 2v9M12 22h-4M12 22h4"></path></svg>
+                        <p class="text-sm text-gray-400">Commercial</p>
+                    </div>
+                    <div class="flex flex-col items-center space-y-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-light-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M12 2v9M12 22h-4M12 22h4"></path></svg>
+                        <p class="text-sm text-gray-400">Hospitality</p>
+                    </div>
+                    <div class="flex flex-col items-center space-y-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-light-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h3.5a1.5 1.5 0 010 3H4v13h16V6a2 2 0 012-2h-3.5a1.5 1.5 0 010 3H20a2 2 0 012 2v7z"></path></svg>
+                        <p class="text-sm text-gray-400">Workspace</p>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-dark-blue text-white py-12">
-        <div class="container mx-auto px-4 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- About -->
-                <div>
-                    <h4 class="font-bold text-lg mb-4 text-gray-200">About Us</h4>
-                    <p class="text-gray-400 text-sm mb-4">
-                        We are a passionate team of swimming coaches dedicated to helping you achieve your goals in the water.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.062 1.954a.65.65 0 00-.594-.539l-4.721-.734a.64.64 0 00-.73.493l-1.002 6.476L9.673 8.21a.634.634 0 00-.638.293L.266 21.045a.65.65 0 00.325.86l4.721.734a.64.64 0 00.73-.493L6.044 15.61l6.096-1.002a.634.634 0 00.638-.293l8.77-12.274a.65.65 0 00-.325-.86z"></path></svg>
-                        </a>
-                        <a href="#" class="text-gray-400 hover:text-white transition">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm3.707 9.293l-4 4a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L10 13.586l3.293-3.293a1 1 0 011.414 1.414z"></path></svg>
-                        </a>
+    <!-- Portfolio Section (Dark) -->
+    <section class="bg-very-dark text-white py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-light-gold text-sm font-semibold tracking-wide uppercase mb-2">Our Portfolio</h2>
+            <h3 class="text-3xl md:text-4xl font-bold mb-12">Our Latest Projects</h3>
+            <!-- Updated Grid: 2 columns on medium and large screens -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-0">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item">
+                    <img src="https://placehold.co/600x600/555555/ffffff?text=Bedroom+Design" alt="A sophisticated bedroom design featuring a plush bed, modern lighting fixtures, and a serene color palette." class="w-full h-auto object-cover">
+                    <div class="portfolio-overlay">
+                        <h4 class="text-lg font-bold">Bedroom Design</h4>
+                        <p class="text-sm text-light-gold">Interior</p>
                     </div>
                 </div>
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="font-bold text-lg mb-4 text-gray-200">Quick Links</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#hero" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition">About Us</a></li>
-                        <li><a href="#courses" class="text-gray-400 hover:text-white transition">Courses</a></li>
-                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition">Pricing</a></li>
-                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition">Gallery</a></li>
-                        <li><a href="#booking" class="text-gray-400 hover:text-white transition">Book a Class</a></li>
-                        <li><a href="#service-areas" class="text-gray-400 hover:text-white transition">Service Areas</a></li>
-                        <li><a href="#map" class="text-gray-400 hover:text-white transition">Map</a></li>
-                        <li><a href="#blog" class="text-gray-400 hover:text-white transition">Blog</a></li>
-                    </ul>
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item">
+                    <img src="https://placehold.co/600x600/666666/ffffff?text=Living+Room" alt="A spacious living room with an open floor plan, comfortable seating, and large windows that provide abundant natural light." class="w-full h-auto object-cover">
+                    <div class="portfolio-overlay">
+                        <h4 class="text-lg font-bold">Living Room</h4>
+                        <p class="text-sm text-light-gold">Interior</p>
+                    </div>
                 </div>
-                <!-- Contact Us -->
-                <div>
-                    <h4 class="font-bold text-lg mb-4 text-gray-200">Contact Us</h4>
-                    <p class="text-gray-400 text-sm mb-2">123 Aqua Street, Swimmer City, USA 12345</p>
-                    <p class="text-gray-400 text-sm mb-2">Email: info@aquaticacademy.com</p>
-                    <p class="text-gray-400 text-sm">Phone: +1 234 567 890</p>
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item">
+                    <img src="https://placehold.co/600x600/777777/ffffff?text=Kitchen+Renovation" alt="A full kitchen renovation showcasing new cabinetry, stainless steel appliances, and a stylish backsplash." class="w-full h-auto object-cover">
+                    <div class="portfolio-overlay">
+                        <h4 class="text-lg font-bold">Kitchen Renovation</h4>
+                        <p class="text-sm text-light-gold">Interior</p>
+                    </div>
                 </div>
-                <!-- Newsletter -->
-                <div>
-                    <h4 class="font-bold text-lg mb-4 text-gray-200">Newsletter</h4>
-                    <p class="text-gray-400 text-sm mb-4">
-                        Stay up to date with our latest news and offers.
-                    </p>
-                    <form>
-                        <input type="email" placeholder="Enter your email" class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition">Subscribe</button>
-                    </form>
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item">
+                    <img src="https://placehold.co/600x600/888888/ffffff?text=Home+Office" alt="A modern home office with a minimalist desk setup, ergonomic chair, and organized shelving for a productive workspace." class="w-full h-auto object-cover">
+                    <div class="portfolio-overlay">
+                        <h4 class="text-lg font-bold">Home Office</h4>
+                        <p class="text-sm text-light-gold">Interior</p>
+                    </div>
                 </div>
             </div>
-            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
-                &copy; 2024 Aquatic Academy. All rights reserved.
+        </div>
+    </section>
+
+    <!-- Service Areas Section (Dark) -->
+    <section class="bg-very-dark text-white py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-light-gold text-sm font-semibold tracking-wide uppercase mb-2">Service Areas</h2>
+            <h3 class="text-3xl md:text-4xl font-bold mb-6">Proudly Serving the Columbus Metro Area</h3>
+            <p class="text-gray-400 mb-12 max-w-2xl mx-auto">We offer comprehensive interior design services to a wide range of neighborhoods and communities in and around Columbus, Ohio.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 md:gap-x-8 text-left text-gray-300">
+                <!-- Column 1 -->
+                <ul class="space-y-2">
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-light-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                        <span>Dublin</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-light-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                        <span>Powell</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-light-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                        <span>Westerville</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-light-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                        <span>New Albany</span>
+                    </li>
+                </ul>
+                <!-- Column 2 -->
+                <ul class="space-y-2">
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-light-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                        <span>Worthington</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-light-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                        <span>Grandview Heights</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-light-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                        <span>Upper Arlington</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-light-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                        <span>Bexley</span>
+                    </li>
+                </ul>
+                <!-- Column 3 -->
+                <ul class="space-y-2">
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-light-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                        <span>Gahanna</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-light-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                        <span>Hilliard</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-light-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                        <span>Lewis Center</span>
+                    </li>
+                    <li class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-light-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                        <span>And more!</span>
+                    </li>
+                </ul>
             </div>
+        </div>
+    </section>
+
+    <!-- Service Area Map Section (Dark) -->
+    <section class="bg-very-dark text-white py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-light-gold text-sm font-semibold tracking-wide uppercase mb-2">Our Coverage</h2>
+            <h3 class="text-3xl md:text-4xl font-bold mb-12">Service Area Map</h3>
+            <div class="rounded-lg shadow-xl overflow-hidden">
+                <img src="https://placehold.co/1200x800/222222/d4a778?text=Columbus+Ohio+Metro+Area+Map" alt="A map highlighting the Columbus, Ohio metro area, showing all the neighborhoods and communities we serve." class="w-full h-auto object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog/Updates Section (Light) -->
+    <section id="blog" class="bg-white py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center text-sm font-semibold tracking-wide uppercase mb-2">LATEST BLOGS</h2>
+            <h3 class="text-center text-3xl md:text-4xl font-bold mb-12">Get Our Every Single Update</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden">
+                    <img src="https://placehold.co/600x400/999999/ffffff?text=Blog+Image+1" alt="A stylish and calming bedroom interior, suggesting a design that promotes relaxation and a sense of safety." class="w-full h-auto object-cover">
+                    <div class="p-6">
+                        <span class="text-xs text-gray-500 font-medium">June 20, 2025</span>
+                        <h4 class="mt-2 text-xl font-bold">These Are Rooms Where You’ll Feel Safe To Stay.</h4>
+                        <p class="mt-2 text-gray-600 text-sm">Discover how to create a personal sanctuary with our guide to designing a bedroom that offers ultimate comfort and security, blending aesthetics with a sense of calm.</p>
+                    </div>
+                </div>
+                <!-- Blog Post 2 -->
+                <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden">
+                    <img src="https://placehold.co/600x400/888888/ffffff?text=Blog+Image+2" alt="A team of interior designers collaborating on a project, symbolizing professional expertise and partnership." class="w-full h-auto object-cover">
+                    <div class="p-6">
+                        <span class="text-xs text-gray-500 font-medium">June 18, 2025</span>
+                        <h4 class="mt-2 text-xl font-bold">Career Designers to Let You Know When to Hire a Designer</h4>
+                        <p class="mt-2 text-gray-600 text-sm">Our expert designers share five clear signs that it’s time to hire a professional to manage your next interior project, ensuring a flawless and stress-free experience.</p>
+                    </div>
+                </div>
+                <!-- Blog Post 3 -->
+                <div class="bg-gray-100 rounded-lg shadow-md overflow-hidden">
+                    <img src="https://placehold.co/600x400/777777/ffffff?text=Blog+Image+3" alt="An image showing before and after shots of a home interior, illustrating the positive transformation of a space." class="w-full h-auto object-cover">
+                    <div class="p-6">
+                        <span class="text-xs text-gray-500 font-medium">June 15, 2025</span>
+                        <h4 class="mt-2 text-xl font-bold">5 Signs to Know If It's Time to Redesign Your Home</h4>
+                        <p class="mt-2 text-gray-600 text-sm">From feeling cramped to simply being out of style, learn the five key indicators that suggest your home is ready for a professional redesign to enhance its beauty and function.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendly Embed Section (Dark) -->
+    <section id="contact" class="bg-very-dark text-white py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-light-gold text-sm font-semibold tracking-wide uppercase mb-2">Book a Consultation</h2>
+            <h3 class="text-3xl md:text-4xl font-bold leading-tight mb-8">Schedule a Free Appointment with Our Team</h3>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">Book a convenient time directly on our calendar to discuss your interior design needs. We look forward to speaking with you!</p>
+            <!-- Calendly embedded iframe -->
+            <div class="overflow-hidden rounded-lg shadow-xl" style="min-height: 700px;">
+                <iframe 
+                    src="https://calendly.com/gemini-ai/30-minute-consultation" 
+                    frameborder="0" 
+                    width="100%" 
+                    height="100%"
+                    class="w-full h-full"
+                    title="Calendly Booking">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section (Dark) -->
+    <section id="newsletter" class="bg-very-dark text-white py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-3xl md:text-4xl font-bold leading-tight mb-4">Subscribe to Our Newsletter</h3>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-8">Stay up to date with our latest projects, design trends, and exclusive offers by subscribing to our newsletter.</p>
+            <form id="newsletter-form" class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <input type="email" name="email" placeholder="Enter your email address" class="w-full sm:w-80 p-4 rounded-md bg-gray-800 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-light-gold" required>
+                <button type="submit" class="w-full sm:w-auto btn-gold py-4 px-8 rounded-md font-semibold transition duration-300 transform hover:scale-105">SUBSCRIBE</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section (Dark) -->
+    <footer class="bg-very-dark text-white py-16 md:py-24 px-6 md:px-12 lg:px-24">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <!-- Col 1: Logo & About -->
+            <div class="space-y-4">
+                <div class="flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-light-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="transform: rotate(30deg);"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path></svg>
+                    <span class="text-2xl font-bold">treorier</span>
+                </div>
+                <p class="text-gray-400 text-sm leading-relaxed">With decades of experience, Treorier has been designing and creating beautiful, functional spaces for residential and commercial clients across the Columbus, Ohio area.</p>
+            </div>
+            <!-- Col 2: Quick Links -->
+            <div>
+                <h4 class="text-lg font-bold mb-4">QUICK LINKS</h4>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-light-gold transition-colors duration-300">About Us</a></li>
+                    <li><a href="#" class="hover:text-light-gold transition-colors duration-300">Services</a></li>
+                    <li><a href="#" class="hover:text-light-gold transition-colors duration-300">Our Projects</a></li>
+                    <li><a href="#" class="hover:text-light-gold transition-colors duration-300">Pricing</a></li>
+                    <li><a href="#" class="hover:text-light-gold transition-colors duration-300">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- Col 3: Services -->
+            <div>
+                <h4 class="text-lg font-bold mb-4">OUR SERVICES</h4>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-light-gold transition-colors duration-300">Interior Design</a></li>
+                    <li><a href="#" class="hover:text-light-gold transition-colors duration-300">Home Decorating</a></li>
+                    <li><a href="#" class="hover:text-light-gold transition-colors duration-300">Commercial Design</a></li>
+                    <li><a href="#" class="hover:text-light-gold transition-colors duration-300">Space Planning</a></li>
+                    <li><a href="#" class="hover:text-light-gold transition-colors duration-300">Lighting Solutions</a></li>
+                </ul>
+            </div>
+            <!-- Col 4: Contact & Social -->
+            <div>
+                <h4 class="text-lg font-bold mb-4">CONTACT INFO</h4>
+                <div class="space-y-4 text-gray-400 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-light-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                        <span>855, Lorem Street, NY</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-light-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.125l-2.582 1.34a1 1 0 00-.501 1.123 1.25 1.25 0 001.12.503l.974-.216c.1-.022.203-.038.31-.046m11.34-1.295a.75.75 0 01.998.79l-.513 1.54a1 1 0 01-1.042.697h-.06a1.002 1.002 0 01-.989-.887v-.04c-.01-.12.002-.24.034-.359M18 10a1.25 1.25 0 00-1.25-1.25h-5.5a1.25 1.25 0 00-1.25 1.25v5.5a1.25 1.25 0 001.25 1.25h5.5a1.25 1.25 0 001.25-1.25v-5.5zm-5.5-1.25a.75.75 0 00-.75.75v5.5a.75.75 0 00.75.75h5.5a.75.75 0 00.75-.75v-5.5a.75.75 0 00-.75-.75h-5.5zm-1.25 1.25c.165 0 .3-.135.3-.3s-.135-.3-.3-.3c-.165 0-.3.135-.3.3s.135.3.3.3z" /></svg>
+                        <span>+1 234 567 8900</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-light-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                        <span>info@example.com</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 treorier. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- JavaScript for mobile menu -->
     <script>
-        document.getElementById('menu-button').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.remove('hidden');
+        // Toggle mobile menu
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
         });
 
-        document.getElementById('close-menu').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.add('hidden');
-        });
-
-        // Get all mobile navigation links
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-
-        // Add a click event listener to each link
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                // Hide the mobile menu when a link is clicked
-                document.getElementById('mobile-menu').classList.add('hidden');
+        // Simple smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
+        });
+
+        // Handle newsletter form submission
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Set message text
+            document.getElementById('message-text').innerText = "You have successfully subscribed to our newsletter!";
+
+            // Show the message box
+            const messageBox = document.getElementById('message-box');
+            messageBox.classList.remove('hidden');
+
+            // Hide the message box after 3 seconds
+            setTimeout(() => {
+                messageBox.classList.add('hidden');
+            }, 3000);
+
+            // Reset the form
+            this.reset();
         });
     </script>
 </body>
